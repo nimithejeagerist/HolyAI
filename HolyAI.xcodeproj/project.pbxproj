@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3800C6DE2C54163500F7852D /* HolyAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C6DD2C54163500F7852D /* HolyAIApp.swift */; };
+		3800C6E22C54163700F7852D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3800C6E12C54163700F7852D /* Assets.xcassets */; };
+		3800C6E62C54163700F7852D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3800C6E52C54163700F7852D /* Preview Assets.xcassets */; };
+		3800C6F42C5417B200F7852D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3800C6F32C5417B200F7852D /* FirebaseAnalytics */; };
+		3800C6F62C5417B200F7852D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3800C6F52C5417B200F7852D /* FirebaseAuth */; };
+		3800C6F82C5417B200F7852D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3800C6F72C5417B200F7852D /* FirebaseFirestore */; };
+		3800C6FA2C5417B200F7852D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3800C6F92C5417B200F7852D /* FirebaseFirestoreSwift */; };
+		3800C6FD2C5417C500F7852D /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 3800C6FC2C5417C500F7852D /* OpenAI */; };
+		3800C6FF2C5417D800F7852D /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C6FE2C5417D800F7852D /* Conversation.swift */; };
+		3800C7012C5417F500F7852D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C7002C5417F500F7852D /* Message.swift */; };
+		3800C7032C54181500F7852D /* AddConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C7022C54181500F7852D /* AddConversationView.swift */; };
+		3800C7052C54187400F7852D /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C7042C54187400F7852D /* ConversationCell.swift */; };
+		3800C7072C5424C600F7852D /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C7062C5424C600F7852D /* MessageCell.swift */; };
+		3800C7092C5425F100F7852D /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C7082C5425F100F7852D /* AuthViewModel.swift */; };
+		3800C70B2C542AE900F7852D /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C70A2C542AE900F7852D /* ConversationViewModel.swift */; };
+		3800C70D2C542B3D00F7852D /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C70C2C542B3D00F7852D /* FirestoreManager.swift */; };
+		3800C70F2C54323E00F7852D /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C70E2C54323E00F7852D /* MessageViewModel.swift */; };
+		3800C7132C54393100F7852D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C7122C54393100F7852D /* MainView.swift */; };
+		3800C7152C543A5400F7852D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C7142C543A5400F7852D /* SignInView.swift */; };
+		3800C7172C543FA000F7852D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800C7162C543FA000F7852D /* SignUpView.swift */; };
+		383433F02C54447C002271DF /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383433EF2C54447C002271DF /* ConversationView.swift */; };
+		383433F22C563C03002271DF /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383433F12C563C03002271DF /* MessageView.swift */; };
+		383433F42C56CD5F002271DF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383433F32C56CD5F002271DF /* SettingsView.swift */; };
+		383433F62C5A8DD6002271DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 383433F52C5A8DD6002271DF /* GoogleService-Info.plist */; };
+		38391CCE2CC4BE18002A072E /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38391CCD2CC4BE18002A072E /* OpenAIService.swift */; };
+		386515942C76E0A600A4E3D6 /* EditConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386515932C76E0A600A4E3D6 /* EditConversationView.swift */; };
+		387917AB2C80D26900FE555C /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 387917AA2C80D26900FE555C /* Poppins-Regular.ttf */; };
+		388995A42C6D5A7C00A603CD /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 388995A12C6D5A7C00A603CD /* Poppins-SemiBold.ttf */; };
+		388995A52C6D5A7C00A603CD /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 388995A22C6D5A7C00A603CD /* Poppins-Bold.ttf */; };
+		388995A62C6D5A7C00A603CD /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 388995A32C6D5A7C00A603CD /* Poppins-Medium.ttf */; };
+		3892C7C12CAACEE00002F5DF /* UpdatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3892C7C02CAACEE00002F5DF /* UpdatePasswordView.swift */; };
+		38E973612C8040F800C99314 /* ConversationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E973602C8040F800C99314 /* ConversationCellViewModel.swift */; };
+		38F32F072C765D5D00B71E54 /* SwiftfulLoadingIndicators in Frameworks */ = {isa = PBXBuildFile; productRef = 38F32F062C765D5D00B71E54 /* SwiftfulLoadingIndicators */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3800C6DA2C54163500F7852D /* HolyAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolyAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3800C6DD2C54163500F7852D /* HolyAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyAIApp.swift; sourceTree = "<group>"; };
+		3800C6E12C54163700F7852D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3800C6E32C54163700F7852D /* HolyAI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HolyAI.entitlements; sourceTree = "<group>"; };
+		3800C6E52C54163700F7852D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3800C6FE2C5417D800F7852D /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		3800C7002C5417F500F7852D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		3800C7022C54181500F7852D /* AddConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConversationView.swift; sourceTree = "<group>"; };
+		3800C7042C54187400F7852D /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		3800C7062C5424C600F7852D /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		3800C7082C5425F100F7852D /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		3800C70A2C542AE900F7852D /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		3800C70C2C542B3D00F7852D /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		3800C70E2C54323E00F7852D /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		3800C7122C54393100F7852D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3800C7142C543A5400F7852D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		3800C7162C543FA000F7852D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		383433EF2C54447C002271DF /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
+		383433F12C563C03002271DF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		383433F32C56CD5F002271DF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		383433F52C5A8DD6002271DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		38391CCD2CC4BE18002A072E /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		383F32902C641267004E3904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		386515932C76E0A600A4E3D6 /* EditConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditConversationView.swift; sourceTree = "<group>"; };
+		387917AA2C80D26900FE555C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		388995A12C6D5A7C00A603CD /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		388995A22C6D5A7C00A603CD /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		388995A32C6D5A7C00A603CD /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		3892C7C02CAACEE00002F5DF /* UpdatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordView.swift; sourceTree = "<group>"; };
+		38E973602C8040F800C99314 /* ConversationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCellViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3800C6D72C54163500F7852D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3800C6FD2C5417C500F7852D /* OpenAI in Frameworks */,
+				3800C6F42C5417B200F7852D /* FirebaseAnalytics in Frameworks */,
+				3800C6F62C5417B200F7852D /* FirebaseAuth in Frameworks */,
+				3800C6F82C5417B200F7852D /* FirebaseFirestore in Frameworks */,
+				3800C6FA2C5417B200F7852D /* FirebaseFirestoreSwift in Frameworks */,
+				38F32F072C765D5D00B71E54 /* SwiftfulLoadingIndicators in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3800C6D12C54163500F7852D = {
+			isa = PBXGroup;
+			children = (
+				3800C6DC2C54163500F7852D /* HolyAI */,
+				3800C6DB2C54163500F7852D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3800C6DB2C54163500F7852D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3800C6DA2C54163500F7852D /* HolyAI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3800C6DC2C54163500F7852D /* HolyAI */ = {
+			isa = PBXGroup;
+			children = (
+				383F32902C641267004E3904 /* Info.plist */,
+				388995A22C6D5A7C00A603CD /* Poppins-Bold.ttf */,
+				388995A32C6D5A7C00A603CD /* Poppins-Medium.ttf */,
+				388995A12C6D5A7C00A603CD /* Poppins-SemiBold.ttf */,
+				387917AA2C80D26900FE555C /* Poppins-Regular.ttf */,
+				3800C6DD2C54163500F7852D /* HolyAIApp.swift */,
+				3800C6ED2C54165200F7852D /* Model */,
+				3800C6EC2C54164A00F7852D /* Components */,
+				3800C6EE2C54165800F7852D /* ViewModel */,
+				3800C6EF2C54166000F7852D /* View */,
+				3800C6E12C54163700F7852D /* Assets.xcassets */,
+				383433F52C5A8DD6002271DF /* GoogleService-Info.plist */,
+				3800C6E32C54163700F7852D /* HolyAI.entitlements */,
+				3800C6E42C54163700F7852D /* Preview Content */,
+			);
+			path = HolyAI;
+			sourceTree = "<group>";
+		};
+		3800C6E42C54163700F7852D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3800C6E52C54163700F7852D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3800C6EC2C54164A00F7852D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3800C7022C54181500F7852D /* AddConversationView.swift */,
+				3800C7042C54187400F7852D /* ConversationCell.swift */,
+				3800C7062C5424C600F7852D /* MessageCell.swift */,
+				386515932C76E0A600A4E3D6 /* EditConversationView.swift */,
+				3892C7C02CAACEE00002F5DF /* UpdatePasswordView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3800C6ED2C54165200F7852D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3800C6FE2C5417D800F7852D /* Conversation.swift */,
+				3800C7002C5417F500F7852D /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3800C6EE2C54165800F7852D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3800C7082C5425F100F7852D /* AuthViewModel.swift */,
+				3800C70C2C542B3D00F7852D /* FirestoreManager.swift */,
+				3800C70A2C542AE900F7852D /* ConversationViewModel.swift */,
+				3800C70E2C54323E00F7852D /* MessageViewModel.swift */,
+				38E973602C8040F800C99314 /* ConversationCellViewModel.swift */,
+				38391CCD2CC4BE18002A072E /* OpenAIService.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3800C6EF2C54166000F7852D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3800C7122C54393100F7852D /* MainView.swift */,
+				3800C7142C543A5400F7852D /* SignInView.swift */,
+				3800C7162C543FA000F7852D /* SignUpView.swift */,
+				383433EF2C54447C002271DF /* ConversationView.swift */,
+				383433F12C563C03002271DF /* MessageView.swift */,
+				383433F32C56CD5F002271DF /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3800C6D92C54163500F7852D /* HolyAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3800C6E92C54163700F7852D /* Build configuration list for PBXNativeTarget "HolyAI" */;
+			buildPhases = (
+				3800C6D62C54163500F7852D /* Sources */,
+				3800C6D72C54163500F7852D /* Frameworks */,
+				3800C6D82C54163500F7852D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HolyAI;
+			packageProductDependencies = (
+				3800C6F32C5417B200F7852D /* FirebaseAnalytics */,
+				3800C6F52C5417B200F7852D /* FirebaseAuth */,
+				3800C6F72C5417B200F7852D /* FirebaseFirestore */,
+				3800C6F92C5417B200F7852D /* FirebaseFirestoreSwift */,
+				3800C6FC2C5417C500F7852D /* OpenAI */,
+				38F32F062C765D5D00B71E54 /* SwiftfulLoadingIndicators */,
+			);
+			productName = HolyAI;
+			productReference = 3800C6DA2C54163500F7852D /* HolyAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3800C6D22C54163500F7852D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					3800C6D92C54163500F7852D = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 3800C6D52C54163500F7852D /* Build configuration list for PBXProject "HolyAI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3800C6D12C54163500F7852D;
+			packageReferences = (
+				3800C6F22C5417B200F7852D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				3800C6FB2C5417C500F7852D /* XCRemoteSwiftPackageReference "OpenAI" */,
+				38F32F052C765D5C00B71E54 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */,
+			);
+			productRefGroup = 3800C6DB2C54163500F7852D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3800C6D92C54163500F7852D /* HolyAI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3800C6D82C54163500F7852D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3800C6E62C54163700F7852D /* Preview Assets.xcassets in Resources */,
+				388995A42C6D5A7C00A603CD /* Poppins-SemiBold.ttf in Resources */,
+				387917AB2C80D26900FE555C /* Poppins-Regular.ttf in Resources */,
+				388995A52C6D5A7C00A603CD /* Poppins-Bold.ttf in Resources */,
+				388995A62C6D5A7C00A603CD /* Poppins-Medium.ttf in Resources */,
+				3800C6E22C54163700F7852D /* Assets.xcassets in Resources */,
+				383433F62C5A8DD6002271DF /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3800C6D62C54163500F7852D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3800C70F2C54323E00F7852D /* MessageViewModel.swift in Sources */,
+				3800C7132C54393100F7852D /* MainView.swift in Sources */,
+				3800C6FF2C5417D800F7852D /* Conversation.swift in Sources */,
+				3800C70D2C542B3D00F7852D /* FirestoreManager.swift in Sources */,
+				3800C7032C54181500F7852D /* AddConversationView.swift in Sources */,
+				383433F42C56CD5F002271DF /* SettingsView.swift in Sources */,
+				3800C7052C54187400F7852D /* ConversationCell.swift in Sources */,
+				38391CCE2CC4BE18002A072E /* OpenAIService.swift in Sources */,
+				38E973612C8040F800C99314 /* ConversationCellViewModel.swift in Sources */,
+				3800C7012C5417F500F7852D /* Message.swift in Sources */,
+				3800C7092C5425F100F7852D /* AuthViewModel.swift in Sources */,
+				3800C6DE2C54163500F7852D /* HolyAIApp.swift in Sources */,
+				3800C70B2C542AE900F7852D /* ConversationViewModel.swift in Sources */,
+				3892C7C12CAACEE00002F5DF /* UpdatePasswordView.swift in Sources */,
+				3800C7172C543FA000F7852D /* SignUpView.swift in Sources */,
+				3800C7072C5424C600F7852D /* MessageCell.swift in Sources */,
+				383433F22C563C03002271DF /* MessageView.swift in Sources */,
+				386515942C76E0A600A4E3D6 /* EditConversationView.swift in Sources */,
+				3800C7152C543A5400F7852D /* SignInView.swift in Sources */,
+				383433F02C54447C002271DF /* ConversationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3800C6E72C54163700F7852D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3800C6E82C54163700F7852D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		3800C6EA2C54163700F7852D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HolyAI/HolyAI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HolyAI/Preview Content\"";
+				DEVELOPMENT_TEAM = D2358Y38XH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HolyAI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nimiakinroye.HolyAI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3800C6EB2C54163700F7852D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HolyAI/HolyAI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HolyAI/Preview Content\"";
+				DEVELOPMENT_TEAM = D2358Y38XH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HolyAI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nimiakinroye.HolyAI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3800C6D52C54163500F7852D /* Build configuration list for PBXProject "HolyAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3800C6E72C54163700F7852D /* Debug */,
+				3800C6E82C54163700F7852D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3800C6E92C54163700F7852D /* Build configuration list for PBXNativeTarget "HolyAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3800C6EA2C54163700F7852D /* Debug */,
+				3800C6EB2C54163700F7852D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3800C6F22C5417B200F7852D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+		3800C6FB2C5417C500F7852D /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+		38F32F052C765D5C00B71E54 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3800C6F32C5417B200F7852D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3800C6F22C5417B200F7852D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3800C6F52C5417B200F7852D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3800C6F22C5417B200F7852D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		3800C6F72C5417B200F7852D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3800C6F22C5417B200F7852D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		3800C6F92C5417B200F7852D /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3800C6F22C5417B200F7852D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		3800C6FC2C5417C500F7852D /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3800C6FB2C5417C500F7852D /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
+		};
+		38F32F062C765D5D00B71E54 /* SwiftfulLoadingIndicators */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38F32F052C765D5C00B71E54 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */;
+			productName = SwiftfulLoadingIndicators;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3800C6D22C54163500F7852D /* Project object */;
+}
