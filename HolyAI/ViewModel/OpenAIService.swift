@@ -10,6 +10,7 @@ import OpenAI
 
 final class OpenAIService {
     private let openAI: OpenAI
+    private let nimi = "I am amazing"
     
     init() {
         // Use environment variable for API key
