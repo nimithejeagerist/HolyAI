@@ -40,27 +40,27 @@ To get started with HolyAI on your local machine, follow these steps:
 
 ### Setup Instructions
 
-### Clone the Repository:
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/yourusername/HolyAI.git
+    cd HolyAI
+
+2. **Install Dependencies**
+- Navigate to the project directory and install dependencies.
    ```bash
-   git clone https://github.com/yourusername/HolyAI.git
-   cd HolyAI
+   pod install
 
-### Install Dependencies
-Navigate to the project directory and install dependencies.
-```bash
-pod install
-
-### Environment Setup
-1. Create an `.xcconfig` file in the project directory.
-2. Add your OpenAI API Key to this file for secure API access.
+3. **Environment Setup**
+- Create an `.xcconfig` file in the project directory.
+- Add your OpenAI API Key to this file for secure API access.
 
 ### Open the Project
-1. Open `HolyAI.xcworkspace` in Xcode.
-2. Select your target device or simulator and run the app.
+- Open `HolyAI.xcworkspace` in Xcode.
+- Select your target device or simulator and run the app.
 
 ---
 
-## Usage
+### Usage
 
 1. **Ask Questions**: Engage in a conversation with HolyAI by asking Bible-related questions or seeking guidance.
 2. **Generate a Study Plan**: Go to the **Study Plans** section, where you can create a personalized plan tailored to your preferences.
@@ -97,4 +97,4 @@ Contributions are welcome! If you have ideas or improvements, please fork the re
 
 ## Contact
 
-For further inquiries, please reach out at [your-email@example.com](mailto:your-email@example.com).
+For further inquiries, please reach out at [nakinroye@gmail.com](mailto:nakinroye@gmail.com).
