@@ -16,6 +16,7 @@ struct SignUpView: View {
     @FocusState private var isFocus: Bool
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject  var authViewModel: AuthViewModel
+    @State private var trigger: Bool = false
     
     var body: some View {
         ZStack {
@@ -44,13 +45,14 @@ struct SignUpView: View {
                     HStack {
                         Image(systemName: "envelope.fill")
                             .foregroundColor(Color.customColor)
-                            .padding(.horizontal, 7)
+                            .padding(.leading, 7)
+                            .padding(.trailing, 3)
                         TextField("", text: $email, prompt: Text("Enter your email").foregroundStyle(Color.placeholderColor))
                             .font(Font.custom("Poppins-Medium", size: 16))
                             .foregroundStyle(.black)
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
-                            .padding()
+                            .padding(.vertical)
                             .focused($isFocus)
                     }
                     .background(Color.white)
@@ -63,12 +65,13 @@ struct SignUpView: View {
                     HStack {
                         Image(systemName: "lock.fill")
                             .foregroundColor(Color.customColor)
-                            .padding(.horizontal, 10)
+                            .padding(.leading, 10)
+                            .padding(.trailing, 8)
                         SecureField("", text: $password, prompt: Text("Enter your password").foregroundStyle(Color.placeholderColor))
                             .font(Font.custom("Poppins-Medium", size: 16))
                             .foregroundStyle(.black)
                             .disableAutocorrection(true)
-                            .padding()
+                            .padding(.vertical)
                             .focused($isFocus)
                     }
                     .background(Color.white)
@@ -82,12 +85,14 @@ struct SignUpView: View {
                 
                 if showAlert {
                     Text(alertMessage)
+                        .font(Font.custom("Poppins-Medium", size: 16))
                         .foregroundStyle(.red)
                         .transition(.opacity)
                         .padding(.top, 5)
                 }
                 
                 Button(action: {
+                    trigger.toggle()
                     Task  {
                         do {
                             let result = try await authViewModel.createUser(email: email, password: password)
@@ -102,15 +107,20 @@ struct SignUpView: View {
                         }
                     }
                 }) { Text("Sign Up")
-                        .font(Font.custom("Poppins-SemiBold", size: 22))
+                        .font(Font.custom("Poppins-Medium", size: 21))
                         .foregroundStyle(.white)
-                        .frame(maxWidth: .infinity, minHeight: 52)
+                        .frame(maxWidth: .infinity, minHeight: 50)
                         .background(Color.customColor)
                         .cornerRadius(20)
-                        .padding(.horizontal, 30)
+                        .padding(.horizontal, 50)
                 }
-                .padding(.top, 20)
-                .shadow(color: .black, radius: 3)
+                .padding(.top, 15)
+                .padding(.horizontal)
+                .shadow(color: .black, radius: 2)
+                .sensoryFeedback(
+                    .impact(weight: .medium, intensity: 0.5),
+                    trigger: trigger
+                )
                 
                 Spacer()
                 

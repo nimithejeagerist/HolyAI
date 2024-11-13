@@ -31,9 +31,8 @@ struct ConversationCell: View {
             })
             Spacer()
         }
-        .padding(.vertical, 7)
+        .padding(.vertical, 5)
         .background(Color.customColorThree)
-        .cornerRadius(10)
         .padding(.horizontal)
         .onAppear {
             conversationCellViewModel.fetchLastMessage(for: conversation.id!)

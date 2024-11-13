@@ -17,21 +17,16 @@ struct MessageCell: View {
             if isUserMessage {
                 Spacer()
                 Text(message.content)
-                    .font(Font.custom("Poppins-Medium", size: 15))
-                    .padding()
+                    .font(Font.custom("Poppins-Medium", size: 16))
+            
                     .background(Color.white.opacity(0.8))
                     .cornerRadius(15)
-                    .padding(.horizontal)
+                   
             } else {
                 
                 Text(message.content)
-                    .font(Font.custom("Poppins-Medium", size: 15))
-                    .padding()
-                    .background(Color.customColor.opacity(0.2))
-                    .cornerRadius(15)
+                    .font(Font.custom("Poppins-Medium", size: 16))
                     .padding(.horizontal)
-                
-                Spacer()
             }
         }
         .padding(.vertical, 8)
@@ -62,5 +57,4 @@ struct MessageCell: View {
         )
     }
     .background(Color.customColorThree)
-    .previewLayout(.sizeThatFits)
 }

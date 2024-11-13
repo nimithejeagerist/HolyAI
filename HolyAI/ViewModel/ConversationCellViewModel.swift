@@ -25,7 +25,7 @@ class ConversationCellViewModel: ObservableObject {
                 }
                 
                 if let document = snapshot?.documents.first {
-                    self.lastMessage = document.get("content") as? String ?? "No message content"
+                    self.lastMessage = document.get("content") as? String ?? "No messages yet"
                 } else {
                     self.lastMessage = "No messages yet"
                 }
