@@ -15,7 +15,8 @@ struct MessageCell: View {
     var body: some View {
         HStack {
             if isUserMessage {
-                Spacer()
+                Spacer(minLength: 50)
+                
                 
                 Text(message.content)
                     .font(Font.custom("Poppins-Regular", size: 16))
