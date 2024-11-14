@@ -13,9 +13,43 @@ struct MainView: View {
     
     var body: some View {
         Group {
-            if authViewModel.userSession != nil {
-                ConversationView()
-                    .environmentObject(authViewModel)
+            if authViewModel.userSession == nil {
+                TabView {
+                    DashboardView()
+                        .environmentObject(authViewModel)
+                        .tabItem {
+                            Image(.home)
+                            Text("Home")
+                        }
+                    
+                    StudyPlansView()
+                        .environmentObject(authViewModel)
+                        .tabItem {
+                            Image(.reading)
+                            Text("Plans")
+                        }
+                    
+                    ConversationView()
+                        .environmentObject(authViewModel)
+                        .tabItem {
+                            Image(.read)
+                            Text("Conversations")
+                        }
+                    
+                    CommunityFeatures()
+                        .environmentObject(authViewModel)
+                        .tabItem {
+                            Image(.crowdOfUsers)
+                            Text("Community")
+                        }
+                    
+                    SettingsView()
+                        .environmentObject(authViewModel)
+                        .tabItem {
+                            Image(.settings)
+                            Text("Settings")
+                        }
+                }
             } else {
                 SignInView()
                     .environmentObject(authViewModel)
@@ -24,4 +58,9 @@ struct MainView: View {
     }
 }
 
-
+#Preview {
+    NavigationStack {
+        MainView()
+            .environmentObject(AuthViewModel())
+    }
+}

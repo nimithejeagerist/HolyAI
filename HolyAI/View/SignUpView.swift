@@ -24,10 +24,10 @@ struct SignUpView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 20) {
-                Image(.logo)
+                Image(.holyAILogo)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 295, height: 300)
+                    .frame(width: 280, height: 280)
                 
                 VStack(alignment: .leading) {
                     Text("Create an account,")

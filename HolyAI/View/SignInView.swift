@@ -13,7 +13,7 @@ extension Color {
     static let customColorTwo = Color(red: 0.49, green: 0.24, blue: 0.60)
     static let customColorThree = Color(red: 0.94, green: 0.95, blue: 0.96)
     static let placeholderColor = Color(red: 0.54, green: 0.54, blue: 0.54)
-    static let messageColor = Color(red: 0.64, green: 0.72, blue: 0.91)
+    static let messageColor = Color(red: 0.82, green: 0.89, blue: 1.00)
 }
 
 struct SignInView: View {
@@ -31,10 +31,10 @@ struct SignInView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 20) {
-                Image(.logo)
+                Image(.holyAILogo)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 295, height: 300)
+                    .frame(width: 280, height: 280)
                 
                 VStack(alignment: .leading) {
                     Text("Sign in,")

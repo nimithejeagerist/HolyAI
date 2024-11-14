@@ -10,10 +10,13 @@ import SwiftfulLoadingIndicators
 
 struct MessageView: View {
     @StateObject private var messageViewModel = MessageViewModel()
+    @StateObject private var keyboardObserver = KeyboardObserver()
+    
     @State private var newMessageContent: String = ""
     @State var emptyScrollToString = "Empty"
-    
+    @State private var trigger: Bool = false
     @FocusState private var isFocus: Bool
+    
     var conversationId: String
     var senderId: String
     
@@ -61,13 +64,19 @@ struct MessageView: View {
                             newMessageContent = ""
                         }
                     }
-                    
+                    .onChange(of: keyboardObserver.keyboardHeight) { height in
+                        if height > 0 {
+                            withAnimation {
+                                proxy.scrollTo(emptyScrollToString, anchor: .bottom)
+                            }
+                        }
+                    }
                     
                     
                     // Button and TextField are inside this closure
                     HStack {
                         TextField("", text: $newMessageContent, prompt: Text("Message Holy AI").foregroundStyle(Color.placeholderColor) , axis: .vertical)
-                            .font(Font.custom("Poppins-Medium", size: 15))
+                            .font(Font.custom("Poppins-Regular", size: 16))
                             .lineLimit(1...5)
                             .padding(7)
                             .background(Color.white.opacity(0.3))
@@ -80,20 +89,30 @@ struct MessageView: View {
                             .focused($isFocus)
                         
                         Button {
+                            trigger.toggle()
+                            let messageContent = newMessageContent.trimmingCharacters(in: .whitespaces)
+                            
                             if !newMessageContent.isEmpty {
-                                sendMessageAndScroll(proxy: proxy)
+                                newMessageContent = ""
+                                sendMessageAndScroll(proxy: proxy, content: messageContent)
                             }
                         } label: {
                             Image(systemName: "arrow.up.circle.fill")
                                 .font(.system(size: 33))
-                                .foregroundStyle(Color.customColor)
+                                .foregroundStyle(newMessageContent.trimmingCharacters(in: .whitespaces).isEmpty ? Color.gray : Color.customColor)
                         }
                         .padding(.trailing, 10)
+                        .sensoryFeedback(
+                            .impact(weight: .medium, intensity: 0.8),
+                            trigger: trigger
+                        )
+                        .disabled(newMessageContent.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                     }
                     .padding()
                     .background(Color.white.opacity(0.3))
                 }
             }
+            .animation(.easeOut(duration: 0.3), value: keyboardObserver.keyboardHeight)
         }
         .preferredColorScheme(.light)
         .onTapGesture {
@@ -101,9 +120,14 @@ struct MessageView: View {
         }
     }
     
-    private func sendMessageAndScroll(proxy: ScrollViewProxy) {
-        messageViewModel.sendMessage(content: newMessageContent, conversationId: conversationId, senderId: senderId) {
-            newMessageContent = ""
+    private func sendMessageAndScroll(proxy: ScrollViewProxy, content: String) {
+        messageViewModel.sendMessage(content: content, conversationId: conversationId, senderId: senderId) {
+            DispatchQueue.main.async {
+                withAnimation(.easeOut(duration: 0.3)) {
+                    proxy.scrollTo(emptyScrollToString, anchor: .bottom)
+                }
+                newMessageContent = ""
+            }
         }
     }
 }
