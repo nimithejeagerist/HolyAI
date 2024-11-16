@@ -22,7 +22,7 @@ struct SignInView: View {
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
     @FocusState private var isFocus: Bool
-    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var authVM: AuthViewModel
     @State private var trigger: Bool = false
     
     var body: some View {
@@ -103,7 +103,7 @@ struct SignInView: View {
                     trigger.toggle()
                     Task {
                         do {
-                            let result = try await authViewModel.signIn(email: email, password: password)
+                            let result = try await authVM.signIn(email: email, password: password)
                             if result != nil {
                                 showAlert(message: result ?? "")
                             }
@@ -130,7 +130,7 @@ struct SignInView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: SignUpView().environmentObject(authViewModel)) {
+                NavigationLink(destination: SignUpView().environmentObject(authVM)) {
                     HStack(spacing: 3) {
                         Text("Don't have an account?")
                             .font(Font.custom("Poppins-SemiBold", size: 14))

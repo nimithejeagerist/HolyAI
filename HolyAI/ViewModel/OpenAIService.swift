@@ -32,7 +32,7 @@ final class OpenAIService {
         // Create the query for the OpenAI API by combining system message with user messages.
         let query = ChatQuery(
             messages: [systemMessage] + userMessages,
-            model: .gpt3_5Turbo
+            model: .gpt4_turbo
         )
         
         // Perform the API call to get the bot's reply.

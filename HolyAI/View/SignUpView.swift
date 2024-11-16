@@ -15,7 +15,7 @@ struct SignUpView: View {
     @State private var showAlert: Bool = false
     @FocusState private var isFocus: Bool
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject  var authViewModel: AuthViewModel
+    @EnvironmentObject  var authVM: AuthViewModel
     @State private var trigger: Bool = false
     
     var body: some View {
@@ -95,7 +95,7 @@ struct SignUpView: View {
                     trigger.toggle()
                     Task  {
                         do {
-                            let result = try await authViewModel.createUser(email: email, password: password)
+                            let result = try await authVM.createUser(email: email, password: password)
                             
                             if result != nil {
                                 showAlert(message: result ?? "")

@@ -9,8 +9,8 @@ import SwiftUI
 import SwiftfulLoadingIndicators
 
 struct ConversationView: View {
-    @StateObject private var conversationViewModel = ConversationViewModel()
-    @EnvironmentObject var authViewModel: AuthViewModel
+    @StateObject private var conversationVM = ConversationViewModel()
+    @EnvironmentObject var authVM: AuthViewModel
     @State private var newConversationTitle: String = ""
     @State private var userId: String = ""
     @State private var showAlert: Bool = false
@@ -29,7 +29,7 @@ struct ConversationView: View {
             VStack {
                 ScrollView {
                     LazyVStack(spacing: 10) {
-                        ForEach(conversationViewModel.conversations) { conversation in
+                        ForEach(conversationVM.conversations) { conversation in
                             NavigationLink(destination: MessageView(conversationId: conversation.id!, senderId: userId)) {
                                 ConversationCell(conversation: conversation)
                                     .contextMenu {
@@ -49,9 +49,9 @@ struct ConversationView: View {
                             }
                         }
                         
-                        if conversationViewModel.isLoading {
+                        if conversationVM.isLoading {
                             VStack(alignment: .center) {
-                                LoadingIndicator(animation: .circleBars, color: .customColor, size: .large, speed: .normal)
+                                LoadingIndicator(animation: .pulse, color: .customColor, size: .medium, speed: .fast)
                             }
                             .padding()
                         }
@@ -90,7 +90,7 @@ struct ConversationView: View {
                 }
                 .sheet(isPresented: $showSettingsView) {
                     SettingsView()
-                        .environmentObject(authViewModel)
+                        .environmentObject(authVM)
                 }
                 .alert(isPresented: $showAlert) {
                     Alert(
@@ -108,14 +108,14 @@ struct ConversationView: View {
             
             if showAddConversationPopup {
                 AddConversationView(newConversationTitle: $newConversationTitle, showAddConversationPopup: $showAddConversationPopup) {
-                    conversationViewModel.addConversation(title: newConversationTitle, userId: userId)
+                    conversationVM.addConversation(title: newConversationTitle, userId: userId)
                 }
             }
             
             if showEditConversationPopup {
                 EditConversationView(newConversationTitle: $newConversationTitle, showEditConversationPopup: $showEditConversationPopup) {
                     if let selectedConversation = selectedConversation {
-                        conversationViewModel.updateConversationTitle(conversationId: selectedConversation.id!, newTitle: newConversationTitle)
+                        conversationVM.updateConversationTitle(conversationId: selectedConversation.id!, newTitle: newConversationTitle)
                     }
                 }
             }
@@ -125,9 +125,9 @@ struct ConversationView: View {
     
     private func fetchAuthenticatedUser() {
         do {
-            let user = try authViewModel.fetchUserId()
+            let user = try authVM.fetchUserId()
             userId = user.uid
-            conversationViewModel.fetchConversations(for: user.uid)
+            conversationVM.fetchConversations(for: user.uid)
         } catch {
             showAlert(message: "Failed to get authenticated user: \(error.localizedDescription)")
         }
@@ -145,7 +145,7 @@ struct ConversationView: View {
     }
     
     private func deleteConversation(conversation: Conversation) {
-        conversationViewModel.deleteConversation(conversationId: conversation.id!)
+        conversationVM.deleteConversation(conversationId: conversation.id!)
     }
 }
 

@@ -12,7 +12,7 @@ struct SettingsView: View {
     @State private var oldPassword: String = ""
     @State private var newPassword: String = ""
     @State private var showUpdatePasswordPopup: Bool = false
-    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var authVM: AuthViewModel
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -26,7 +26,7 @@ struct SettingsView: View {
                         .font(Font.custom("Poppins-SemiBold", size: 19))
                     
                     Button(action: {
-                        authViewModel.signOut()
+                        authVM.signOut()
                         dismiss()
                     }, label: {
                         HStack {
@@ -101,7 +101,7 @@ struct SettingsView: View {
                       primaryButton: .destructive(Text("Delete")) {
                     Task {
                         do {
-                            try await authViewModel.deleteUser()
+                            try await authVM.deleteUser()
                             dismiss()
                         } catch {
                             print(error.localizedDescription)
@@ -115,7 +115,7 @@ struct SettingsView: View {
                 UpdatePasswordView(oldPassword: $oldPassword, newPassword: $newPassword, showUpdatePasswordPopup: $showUpdatePasswordPopup) { oldPassword, newPassword in
                     Task {
                         do {
-                            let success = try await authViewModel.reauthenticateAndChangePassword(oldPassword: oldPassword, newPassword: newPassword)
+                            let success = try await authVM.reauthenticateAndChangePassword(oldPassword: oldPassword, newPassword: newPassword)
                             if success == "success" {
                                 print("Password updated successfully")
                                 dismiss()

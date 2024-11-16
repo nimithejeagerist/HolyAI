@@ -32,6 +32,7 @@
 		383433F42C56CD5F002271DF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383433F32C56CD5F002271DF /* SettingsView.swift */; };
 		383433F62C5A8DD6002271DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 383433F52C5A8DD6002271DF /* GoogleService-Info.plist */; };
 		38391CCE2CC4BE18002A072E /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38391CCD2CC4BE18002A072E /* OpenAIService.swift */; };
+		3844524A2CE8794800C60571 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384452492CE8794800C60571 /* DashboardViewModel.swift */; };
 		386515942C76E0A600A4E3D6 /* EditConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386515932C76E0A600A4E3D6 /* EditConversationView.swift */; };
 		386A553B2CE53AA800B937DC /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386A553A2CE53AA800B937DC /* KeyboardObserver.swift */; };
 		386A553F2CE555FE00B937DC /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386A553E2CE555FE00B937DC /* DashboardView.swift */; };
@@ -72,6 +73,7 @@
 		383433F52C5A8DD6002271DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38391CCD2CC4BE18002A072E /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
 		383F32902C641267004E3904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		384452492CE8794800C60571 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		386515932C76E0A600A4E3D6 /* EditConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditConversationView.swift; sourceTree = "<group>"; };
 		386A553A2CE53AA800B937DC /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		386A553E2CE555FE00B937DC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				38E973602C8040F800C99314 /* ConversationCellViewModel.swift */,
 				38391CCD2CC4BE18002A072E /* OpenAIService.swift */,
 				386A553A2CE53AA800B937DC /* KeyboardObserver.swift */,
+				384452492CE8794800C60571 /* DashboardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				3800C70F2C54323E00F7852D /* MessageViewModel.swift in Sources */,
 				3800C7132C54393100F7852D /* MainView.swift in Sources */,
 				386A55452CE5A8A800B937DC /* CustomToolbar.swift in Sources */,
+				3844524A2CE8794800C60571 /* DashboardViewModel.swift in Sources */,
 				3800C6FF2C5417D800F7852D /* Conversation.swift in Sources */,
 				3800C70D2C542B3D00F7852D /* FirestoreManager.swift in Sources */,
 				3800C7032C54181500F7852D /* AddConversationView.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftfulLoadingIndicators
 
 struct MessageView: View {
-    @StateObject private var messageViewModel = MessageViewModel()
+    @StateObject private var messageVM = MessageViewModel()
     @StateObject private var keyboardObserver = KeyboardObserver()
     
     @State private var newMessageContent: String = ""
@@ -29,13 +29,13 @@ struct MessageView: View {
                 ScrollViewReader { proxy in
                     ScrollView {
                         LazyVStack(spacing: 10) {
-                            ForEach(messageViewModel.messages) { message in
+                            ForEach(messageVM.messages) { message in
                                 MessageCell(message: message, isUserMessage: message.senderId == senderId)
                                     .padding(.horizontal)
                                     .id(message.id)
                             }
                             
-                            if messageViewModel.isLoading {
+                            if messageVM.isLoading {
                                 HStack {
                                     LoadingIndicator(animation: .threeBallsBouncing, color: Color.customColor, size: .small, speed: .fast)
                                     Spacer()
@@ -49,14 +49,14 @@ struct MessageView: View {
                             HStack{Spacer()}
                                 .id(emptyScrollToString)
                         }
-                        .onReceive(messageViewModel.$count, perform: { _ in
+                        .onReceive(messageVM.$count, perform: { _ in
                             proxy.scrollTo(emptyScrollToString, anchor: .bottom)
                         })
                     }
                     .onAppear {
-                        messageViewModel.fetchMessages(for: conversationId)
+                        messageVM.fetchMessages(for: conversationId)
                     }
-                    .onChange(of: messageViewModel.messages) { oldMessages, newMessages in
+                    .onChange(of: messageVM.messages) { oldMessages, newMessages in
                         if let lastMessageId = newMessages.last?.id {
                             withAnimation(.easeOut(duration: 0.3)) {
                                 proxy.scrollTo(lastMessageId, anchor: .bottom)
@@ -121,7 +121,7 @@ struct MessageView: View {
     }
     
     private func sendMessageAndScroll(proxy: ScrollViewProxy, content: String) {
-        messageViewModel.sendMessage(content: content, conversationId: conversationId, senderId: senderId) {
+        messageVM.sendMessage(content: content, conversationId: conversationId, senderId: senderId) {
             DispatchQueue.main.async {
                 withAnimation(.easeOut(duration: 0.3)) {
                     proxy.scrollTo(emptyScrollToString, anchor: .bottom)

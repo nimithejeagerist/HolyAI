@@ -10,7 +10,7 @@ import FirebaseFirestore
 
 struct ConversationCell: View {
     var conversation: Conversation
-    @StateObject private var conversationCellViewModel = ConversationCellViewModel()
+    @StateObject private var conversationCellVM = ConversationCellViewModel()
     
     var body: some View {
         HStack {
@@ -23,7 +23,7 @@ struct ConversationCell: View {
                 Text(conversation.title)
                     .font(Font.custom("Poppins-Medium", size: 16))
                     .foregroundColor(.black)
-                Text(conversationCellViewModel.lastMessage)
+                Text(conversationCellVM.lastMessage)
                     .font(Font.custom("Poppins-Regular", size: 14))
                     .foregroundColor(.black)
                     .lineLimit(1)
@@ -35,7 +35,7 @@ struct ConversationCell: View {
         .background(Color.customColorThree)
         .padding(.horizontal)
         .onAppear {
-            conversationCellViewModel.fetchLastMessage(for: conversation.id!)
+            conversationCellVM.fetchLastMessage(for: conversation.id!)
         }
         
     }
