@@ -9,33 +9,33 @@ import SwiftUI
 
 struct MainView: View {
     
-    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var authVM: AuthViewModel
     @State private var selectedTab: CustomToolbar.Tab = .home
     
     private let lastInactiveKey = "lastInactiveTime"
     
     var body: some View {
         Group {
-            if authViewModel.userSession !=   nil {
+            if authVM.userSession !=   nil {
                 ZStack {
                     // Main content area
                     VStack {
                         switch selectedTab {
                         case .home:
                             DashboardView()
-                                .environmentObject(authViewModel)
+                                .environmentObject(authVM)
                         case .plans:
                             StudyPlansView()
-                                .environmentObject(authViewModel)
+                                .environmentObject(authVM)
                         case .chats:
                             ConversationView()
-                                .environmentObject(authViewModel)
+                                .environmentObject(authVM)
                         case .community:
                             CommunityFeatures()
-                                .environmentObject(authViewModel)
+                                .environmentObject(authVM)
                         case .settings:
                             SettingsView()
-                                .environmentObject(authViewModel)
+                                .environmentObject(authVM)
                         }
                         
                         Spacer()
@@ -49,7 +49,7 @@ struct MainView: View {
                 
             } else {
                 SignInView()
-                    .environmentObject(authViewModel)
+                    .environmentObject(authVM)
             }
         }
     }

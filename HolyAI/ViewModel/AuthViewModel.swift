@@ -84,9 +84,7 @@ final class AuthViewModel: ObservableObject {
     // Update password in Firebase
     func reauthenticateAndChangePassword(oldPassword: String, newPassword: String) async throws -> String? {
         guard let user = Auth.auth().currentUser, let email = user.email else { return "User not signed in" }
-        
-        print("I just got here")
-        
+                
         let credential = EmailAuthProvider.credential(withEmail: email, password: oldPassword)
         
         do {

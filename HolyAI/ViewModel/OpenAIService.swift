@@ -5,7 +5,8 @@
 //  Created by Nimi Akinroye on 2024-10-19.
 //
 
-import Foundation
+import UIKit
+import SwiftUI
 import OpenAI
 
 final class OpenAIService {
@@ -51,4 +52,5 @@ final class OpenAIService {
             }
         }
     }
+    
 }

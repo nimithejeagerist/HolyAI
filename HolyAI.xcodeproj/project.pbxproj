@@ -33,6 +33,7 @@
 		383433F62C5A8DD6002271DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 383433F52C5A8DD6002271DF /* GoogleService-Info.plist */; };
 		38391CCE2CC4BE18002A072E /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38391CCD2CC4BE18002A072E /* OpenAIService.swift */; };
 		3844524A2CE8794800C60571 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384452492CE8794800C60571 /* DashboardViewModel.swift */; };
+		3844524D2CE8A30000C60571 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3844524C2CE8A30000C60571 /* FirebaseStorage */; };
 		386515942C76E0A600A4E3D6 /* EditConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386515932C76E0A600A4E3D6 /* EditConversationView.swift */; };
 		386A553B2CE53AA800B937DC /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386A553A2CE53AA800B937DC /* KeyboardObserver.swift */; };
 		386A553F2CE555FE00B937DC /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386A553E2CE555FE00B937DC /* DashboardView.swift */; };
@@ -98,6 +99,7 @@
 				3800C6F42C5417B200F7852D /* FirebaseAnalytics in Frameworks */,
 				3800C6F62C5417B200F7852D /* FirebaseAuth in Frameworks */,
 				3800C6F82C5417B200F7852D /* FirebaseFirestore in Frameworks */,
+				3844524D2CE8A30000C60571 /* FirebaseStorage in Frameworks */,
 				3800C6FA2C5417B200F7852D /* FirebaseFirestoreSwift in Frameworks */,
 				38F32F072C765D5D00B71E54 /* SwiftfulLoadingIndicators in Frameworks */,
 			);
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				3800C6DC2C54163500F7852D /* HolyAI */,
+				3844524B2CE8A30000C60571 /* Frameworks */,
 				3800C6DB2C54163500F7852D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -205,6 +208,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3844524B2CE8A30000C60571 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +238,7 @@
 				3800C6F92C5417B200F7852D /* FirebaseFirestoreSwift */,
 				3800C6FC2C5417C500F7852D /* OpenAI */,
 				38F32F062C765D5D00B71E54 /* SwiftfulLoadingIndicators */,
+				3844524C2CE8A30000C60571 /* FirebaseStorage */,
 			);
 			productName = HolyAI;
 			productReference = 3800C6DA2C54163500F7852D /* HolyAI.app */;
@@ -595,6 +606,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3800C6FB2C5417C500F7852D /* XCRemoteSwiftPackageReference "OpenAI" */;
 			productName = OpenAI;
+		};
+		3844524C2CE8A30000C60571 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3800C6F22C5417B200F7852D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 		38F32F062C765D5D00B71E54 /* SwiftfulLoadingIndicators */ = {
 			isa = XCSwiftPackageProductDependency;
