@@ -9,14 +9,17 @@ import SwiftUI
 
 struct DashboardView: View {
     @StateObject var dashboardVM = DashboardViewModel()
+
     
     var body: some View {
         ZStack {
             AsyncImage(url: dashboardVM.imageOfTheDay) { image in
                 image
                     .resizable()
-                    .frame(width: 500, height: 500)
+                    .frame(width: 400, height: 400)
+                    .opacity(dashboardVM.imageOpacity!)
                     .scaledToFit()
+                    .cornerRadius(20)
             } placeholder: {
                 ProgressView()
             }
@@ -29,6 +32,7 @@ struct DashboardView: View {
                 
                 Text(dashboardVM.referenceOfTheDay)
                     .font(.headline)
+                    .foregroundStyle(dashboardVM.textColor!)
                     .padding()
                 
                 Text(dashboardVM.verseOfTheDay)
@@ -42,6 +46,7 @@ struct DashboardView: View {
             }
         }
     }
+    
 }
 
 #Preview {
